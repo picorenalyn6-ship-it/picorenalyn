@@ -1,17 +1,20 @@
-{
-    box-sizing: border-box;
-}
+
+    *{
+        box-sizing: border-box;
+    }
+    
+
 
 body{
-    marfin: 0;
+    margin: 0;
     font-family: 'Poppins', sans-serif;
     background-color: #FDF8F5;
-    color: #2c2c2c
+    color: #2c2c2c;
     line-height: 1.8;
 }
 
 h1, h2, h3 {
-    font-family: 'Playfair Display' serif;
+    font-family: 'Playfair Display', serif;
     color: #8B263E;
 }
 
@@ -31,9 +34,18 @@ h1, h2, h3 {
     gap: 12px;
 }
 
+.logo{
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #FDF8F5;
+
+}
+
 .brand name {
     font-family: 'playfair display',serif;
     font-size: 1.6rem;
-    font-wieght: 700;
-    color: #2C2C2C
+    font-weight: 700;
+    color: #2C2C2C;
 }
