@@ -49,3 +49,26 @@ h1, h2, h3 {
     font-weight: 700;
     color: #2C2C2C;
 }
+
+.main-nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.main-nav a {
+    display: block;
+    padding: 10px 16px;
+    color: #2C2C2C;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: background-color 0.3s,color 0.3s;
+
+}
+
+
