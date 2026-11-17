@@ -10,4 +10,17 @@ body{
     line-height: 1.8;
 }
 
+h1, h2, h3 {
+    font-family: 'Playfair Display' serif;
+    color: #8B263E;
+}
 
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 40px;
+    background-color: #E8A5A5;
+
+}
