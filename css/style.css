@@ -24,3 +24,16 @@ h1, h2, h3 {
     background-color: #E8A5A5;
 
 }
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand name {
+    font-family: 'playfair display',serif;
+    font-size: 1.6rem;
+    font-wieght: 700;
+    color: #2C2C2C
+}
