@@ -104,7 +104,36 @@ const navObserver = new IntersectionObserver(entries => {
 
 setActive(homelink);
 
-const re
+const revealTargets = document.querySelectorAll('.about,highlights h2, .feature-card');
+
+if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries,observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                el.classList.add('visible');
+                observer.unaobserve(el);
+
+                setTimeout(() => {
+                    el.classList.remove('reveal', 'visible');
+                    el.style.transitioDelay = '';
+                }, 1300);
+            }
+        });
+    },{ thresfold: 0.15});
+
+    revealTargets.forEach((el,i) => {
+        el.classList.add('reveal');
+        if (el.classList.contains('feature-card')) {
+            el.style.transitionDelay = (i % 4) * 0.1 + 's';
+        }
+        revealObserver.observe(el);
+    });
+ } 
+});
+            
+    
+
 
 
 
