@@ -39,5 +39,44 @@ document.addEventListener(`DOMContentLoaded`, () => {
     backToTop.innerHTML = '&uarr;';
     document.body.appendChild(backToTop);
 
+    backToTop.addEventListener('click',() => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+function onScroll() {
+    header.classList.toggle('scrolled', window.scrollY > 10);
+    backToTop.classList.toggle('snow',window.scrollY > 400);
+}
+
+Window.addEventListener('scroll',onScroll,{ passive: true});
+onScroll();
+
+const toast = document.createElement('div');
+toast.id = 'toast';
+toast.setAttribute('role', 'status');
+document.body.appendChild(toast);
+
+let toastTimer;
+function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    clearTimeout(toasTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'),2200);
+}
+
+document.querySelectorAll('a[href="#"]').forEach(link => {
+    link.addEventListener('click', event => {
+        event.preventDefault();
+        const label = link.textContent.trim();
+        showToast(label + 'our page comming soon!');
+    });
+});
+
+document.querySelectorAll('a[href="html"]'). forEach(link => {
+    link.addEventListener('click',event => {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth'});
+    });
+});
+
 
 
