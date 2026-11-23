@@ -28,7 +28,16 @@ document.addEventListener(`DOMContentLoaded`, () => {
     #toast.shhow { opacity: 1; transform: translate(-50%, 0); }
 
     `;
-    
+    document.head.appendChild(style);
+
+    const header = document.querySelector('.site-header');
+
+    const backToTop = document.createElement('button');
+    backToTop.id = 'back-to-top';
+    backToTop.type = 'button';
+    backToTop.setAttribute('aria-label', 'Back to top');
+    backToTop.innerHTML = '&uarr;';
+    document.body.appendChild(backToTop);
 
 
 
