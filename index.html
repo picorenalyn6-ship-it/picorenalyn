@@ -46,6 +46,7 @@
             <h3> Pinky node Lip Tint</h3>
             <p>Soft-matte color that lasts all day. Available in 6 shades. </p>
             <p class="price">₱199</p>
+            <button type="button" class="order-btn" data-product="Pinky node Lip Tint">Order Now</button>
           </div>
 
           </article>
@@ -55,7 +56,8 @@
         <div class="product-info">
              <h3> Skin Glow Foundation</h3>
              <p> Lightweight coverage with shades for different skin tones.</p>
-             <p class="price">₱899</p>
+             <p class="price">₱399</p>
+             <button type="button" class="order-btn" data-product="Skin Glow Foundation">Order Now</button>
             </div>
           </article>
 
@@ -65,6 +67,7 @@
              <h3> Everyday Eye Pallete.</h3>
              <p>Nine blendable neutrals for school, work and nights out. </p>
              <p class="price">₱349</p>
+             <button type="button" class="order-btn" data-product="Everyday Eye Palette">Order Now</button>
           </div>
       </article>
 
@@ -74,6 +77,7 @@
         <div class="product-info">
              <h3>Light daily cream that keeps skin soft and fresh. </h3>
              <p class="price">₱249</p>
+             <button type="button" class="order-btn" data-product="Hydra Moisturizer">Order Now</button>
         </div>
       </article>
 
@@ -138,19 +142,19 @@
                 <blockquote class="review-card">
                     <p class="stars" aria-label="5 out of 5 stars">★★★★★</p>
                     <p>"The lip tint stays on through my whole class day and it's so affordable!"</p>
-                    <footer>— Maria S., Cagayan de Oro</footer>
+                    <footer>— Nancy Fernandez., Cagayan de Oro</footer>
                 </blockquote>
 
                 <blockquote class="review-card">
                     <p class="stars" aria-label="5 out of 5 stars">★★★★★</p>
                     <p>"Finally a foundation shade that matches my skin tone."</p>
-                    <footer>— Angela R., Cebu</footer>
+                    <footer>— Ashley R., Cebu</footer>
                 </blockquote>
 
                 <blockquote class="review-card">
                     <p class="stars" aria-label="4 out of 5 stars">★★★★☆</p>
                     <p>"Love the eye palette. Easy to blend and perfect for everyday looks."</p>
-                    <footer>— Joyce T., Davao</footer>
+                    <footer>— Razel Pico., Davao</footer>
                 </blockquote>
 
             </div>
@@ -191,7 +195,17 @@
                 'Thank you! Your message has been received.';
             this.reset();
         });
-    </script>
+    </script><script>
+    document.querySelectorAll('.order-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var product = btn.dataset.product;
+            document.getElementById('message').value =
+                'Hello! I want to order: ' + product + '. Quantity: 1';
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('name').focus({ preventScroll: true });
+        });
+    });
+</script>
 
 </body>
 </html>  
