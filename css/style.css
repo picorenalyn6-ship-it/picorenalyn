@@ -6,6 +6,14 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 90px;
+}
+
 
 
 body {
@@ -21,7 +29,20 @@ h1,h2,h3 {
     color: #8B263E;
 }
 
+h2 {
+    font-size: 2rem;
+    margin: 0 0 20px;
+}
+
+.section-intro {
+    margin:0 auto 10px;
+    max-width: 600px;
+}
+
 .site-header {
+    position: sticky;
+    top: 0;
+    z-index:100;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -110,29 +131,95 @@ h1,h2,h3 {
     background-color: #8B263E;
     color: #FDF8F5;
     text-decoration: none;
+    font-family: inherit;
+    font-size: 1rem;
     font-weight: 500;
+    border: none;
     border-radius: 30px;
+    cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
 
 }
-.cta-button:hover,
-.cta-button:focus-visible {
+.cta-button:hover {
     background-color: #2C2C2C;
     transform:translateY(-3px);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+    
 }
 
-.about {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 60px 20px;
+
+.products {
+    padding: 60px 40px;
     text-align: center;
 }
 
-.about h2,
-.highlights h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 30px auto 0;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: left;
+}
+
+.product-img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background-color: #E8A5A5; /* shows if the image file is missing */
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    margin: 0 0 8px;
+    font-size: 1.2rem;
+}
+
+.product-info p {
+    margin: 0 0 8px;
+    font-size: 0.95rem;
+}
+
+.price {
+    font-weight: 500;
+    color: #8B263E;
+}
+
+.about {
+    padding: 60px 20px;
+    padding: 60px 20px;
+    
+}
+
+.about-inner {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-img {
+    flex: 1 1 45%;
+    min-width: 0;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 12px;
+    background-color: #E8A5A5; /* shows if the image file is missing */
+}
+
+.about-text {
+    flex: 1 1 55%;
 }
 
 .highlights {
@@ -166,6 +253,56 @@ h1,h2,h3 {
 
 }
 
+.reviews {
+    padding: 60px 40px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 30px auto 0;
+}
+
+.review-card {
+    margin: 0;
+    padding: 28px 24px;
+    background-color: #FDF8F5;
+    border-left: 5px solid #8B263E;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.review-card p {
+    margin: 0 0 10px;
+}
+
+.review-card footer {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.stars {
+    color: #D4A017;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .site-footer {
     margin-top: 0;
     padding: 30px 20px;
@@ -180,6 +317,65 @@ h1,h2,h3 {
     margin: 6px 0;
 }
 
+.contact {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 520px;
+    margin: 25px auto 0;
+    text-align: left;
+}
+
+.contact-form label {
+    font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px 14px;
+    font-family: inherit;
+    font-size: 1rem;
+    border: 1px solid #E8A5A5;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid #8B263E;
+}
+
+.contact-form .cta-button {
+    align-self: flex-start;
+    margin-top: 12px;
+}
+
+.form-status {
+    margin: 8px 0 0;
+    color: #8B263E;
+    font-weight: 500;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    margin-top: 0;
+    padding: 30px 20px;
+    background-color: #2C2C2C;
+    color: #FDF8F5;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.site-footer p {
+    margin: 6px 0;
+}
+
+/* ---------- Responsive ---------- */
 @media (max-width: 700px) {
     .site-header {
         flex-direction: column;
@@ -187,25 +383,35 @@ h1,h2,h3 {
         padding: 15px 20px;
     }
 
-
-
-
     .main-nav ul {
         flex-wrap: wrap;
         justify-content: center;
+    }
 
+    section {
+        scroll-margin-top: 160px;
     }
 
     .hero {
         padding: 60px 20px;
-
     }
 
     .hero h1 {
         font-size: 2rem;
     }
 
-    .highlights {
-        padding: 40px 2opx;
+    .products,
+    .highlights,
+    .reviews {
+        padding: 40px 20px;
+    }
+
+    .about-inner {
+        flex-direction: column;
+    }
+
+    .about-img {
+        width: 100%;
+        height: 260px;
     }
 }
