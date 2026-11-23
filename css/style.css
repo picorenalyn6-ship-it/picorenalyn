@@ -59,10 +59,10 @@ h2 {
 }
 
 .logo {
-    width: 55px;
-    height: 55px;
+    width: 100px;
+    height: 80px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 80%;
     background-color: #FDF8F5;
 
 }
@@ -290,16 +290,6 @@ h2 {
     font-size: 1.2rem;
     letter-spacing: 2px;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
