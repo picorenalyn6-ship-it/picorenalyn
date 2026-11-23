@@ -77,6 +77,34 @@ document.querySelectorAll('a[href="html"]'). forEach(link => {
         window.scrollTo({ top: 0, behavior: 'smooth'});
     });
 });
+9
+const homelink = document.querySelector('.main-nav a[href="index.html"]');
+const aboutlink = document.querySelector('.main-nav a[href="#about"]');
+const hero      = document.querySelector('#home');
+const about     = document.querySelector('about');
+const features  = document.queruSelector('highlights');
+
+function setActive(link) {
+    document.querySelectorAll('.main-nav a').forEach(a =>a.classList.remove('active'));
+    if(link) link.classList.add('active');
+}
+
+if ('IntersectionObserver' in window) {
+const navObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        if (entry.target === hero) setActive(homeLink);
+        if (entry.target === about) setActive(aboutlink);
+        if (entry.target === features) setActive(null);
+    });
+}, { rootMargin: '-40% 0px -50% 0px'});
+
+[hero,about,features].foreach(section => section && navObserver.observe(section));
+}
+
+setActive(homelink);
+
+const re
 
 
 
