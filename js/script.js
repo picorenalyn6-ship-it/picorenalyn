@@ -19,5 +19,16 @@ document.addEventListener(`DOMContentLoaded`, () => {
                    opacity: 0; visibilty: hidden; transition: opacity 0.3s, visibility 0.3s,transform 0.3s;
                    z-index: 100; }
 
+    #back-to-top.show { opacity: 1; visibility: visible; }
+    #back-to-top:hover { transform: translateY(-3px); background: #2C2C2C; }
+
+    #toast { position: fixed; left: 50%; bottom: 30px; transform: translate(-50%,20px);
+    background: #2C2C2C; color: #FDF8F5; padding: 12px 24px; border-radius: 30px;
+    transition: opacity 0.3s, transform 0.3s; z-index: 200; }
+    #toast.shhow { opacity: 1; transform: translate(-50%, 0); }
+
+    `;
+    
+
 
 
